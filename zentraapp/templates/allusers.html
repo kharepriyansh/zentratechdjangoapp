@@ -1,0 +1,19 @@
+{% extends 'dash.html' %}
+
+{% block content%}
+<a href="/dash/">GO back</a>
+
+<ul>
+    {% for x in data.members %}
+      <li >{{ x.name }} {{ x.email }} 
+        <form action="{% url 'sendinterest' x.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-sm">Send Interest</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'dash.html' %}
+
+{% block content%}
+<a href="/dash/">GO back</a>
+
+<ul>
+    {% for x in requests %}
+      <li > 
+        from:{{x.sender.name}}
+        <button>accept</button>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock %}
